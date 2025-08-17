@@ -1,0 +1,37 @@
+\documentclass[a4paper,12pt]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{hyperref} % Pour les liens
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+
+\signature{} % Laissez vide pour utiliser le flushleft
+\address{SIRGHI Vladimir \\ 31 Rue Bois Gentil \\ 74600, Annecy \\ tel: +33.638.60.80.85} % Votre adresse
+\date{\today} % Date
+
+\begin{document}
+
+\begin{letter}{Recruiter's Company \\ address \\ } % Adresse du destinataire
+
+\opening{Objet : Candidature pour le poste de Développeur Logiciel Embarqué}
+Madame, Monsieur,\\\\
+Je me présente, je m’appelle Vladimir Sirghi et je suis ingénieur développeur embarqué.
+Par la présente lettre, je souhaite vous exprimer mon intérêt pour le poste de “Embedded Software Engineer” au sein de votre entreprise \textbf{XYZ}, tel qu'annoncé sur \href{https://www.glassdoor.fr/}{\textbf{Glassdoor}}, et également sur votre site : \url{https://www.google.com}.
+
+Je pense pouvoir contribuer pleinement à la liste des tâches que vous avez listées dans le descriptif du poste.
+
+Mon domaine de compétence s’articule autour de la programmation bas niveau en C, avec manipulation des sondes de debug type ST-Link, J-Link en protocol SWD ou JTAG, probe de la pin SWO sur un oscilloscope, et personnalisation de OpenOCD pour supporter le Cortex M85. Je considère avoir un niveau décent dans la compréhension et la manipulation des trames SPI, I2C, JTAG, SWD, principalement parce que je travaille quotidiennement sur ces sujets dans ma position courante. Mon support hardware est constitué des FPGA pour émulation du SoC en prototypage pré-PG [Pattern Generation] avec différentes versions de netlists et du silicon SoC en post-PG.
+
+J’ai des connaissances solides sur le Cortex M ainsi que sur les périphériques et blocs IP avec leurs registres de contrôle et configuration, I2C et SPI faisant partie. Je travaille sur des mémoires RAM très limitées, qui ne dépassent pas les 100 Ko pour les binaires de firmwares sous des contraintes safety automotive.
+
+Je suis très à l’aise en anglais et je m'adapte facilement aux environnements multiculturels, et je communique efficacement avec des collègues et des clients.
+
+Je serais ravi de discuter plus en détail de ma candidature et de la manière dont je peux contribuer au succès de votre équipe. Je vous remercie pour votre attention et j'espère avoir l'opportunité de vous rencontrer prochainement.
+
+\begin{flushleft}
+Cordialement, \\
+Vladimir SIRGHI, \\
+Ingénieur Logiciel Embarqué.
+\end{flushleft}
+
+\end{letter}
+\end{document}
