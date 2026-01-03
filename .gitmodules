@@ -1,0 +1,6 @@
+[submodule "diplomas"]
+	path = diplomas
+	url = https://github.com/slalomeset/diplomas.git
+[submodule "certificates"]
+	path = certificates
+	url = https://github.com/slalomeset/certificates.git

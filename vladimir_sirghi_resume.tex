@@ -32,7 +32,9 @@
 \usepackage{graphicx}
 \usepackage{etoolbox}  % for conditional logic
 \usepackage{csquotes}
+\usepackage{footmisc}
 
+\renewcommand{\footnotesize}{\scriptsize} % réduit la taille des footnotes
 
 % is_long_version = true will render more detailed resume
 \newtoggle{is_long_version} % Define the boolean variable
@@ -79,7 +81,7 @@
 \def\bulletIndent{20pt} % indent of bullet lists
 
 % set bullet list symbol formatting
-\setlist[itemize,1]{label=$\vcenter{\hbox{\tiny$\bullet$}}$} 
+\setlist[itemize,1]{label=$\vcenter{\hbox{\tiny$\bullet$}}$}
 \setlist[itemize,2]{label=$\vcenter{\hbox{\tiny$\bullet$}}$}
 \setlist[itemize,3]{label=$\vcenter{\hbox{\tiny$\circ$}}$}
 
@@ -94,7 +96,7 @@
 
 % company name -- location
 \newcommand{\companyNameAndLocationHeading}[2]{
-  \item 
+  \item
     \begin{tabular*}{1.0\textwidth}[b]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2
     \end{tabular*}
@@ -167,58 +169,90 @@
 
 \companyNameAndLocationHeading {\bref{https://www.st.com/}{STMicroelectronics}}{Le Bourget-du-lac, Auvergne-Rhône-Alpes, France}
 \titleAndDateHeading
-{Embedded software engineer}{March 2022 \textbf{--} Present}
+{Embedded Software Engineer -- Ultra-Wideband (UWB) Technology}{March 2022 \textbf{--} Present}
 \outerBulletListStart
-\bulletItem{Develop firmware for ARM Cortex-M targets and FPGAs SOC prototypes.}
-\bulletItem{Lead and report on verification activities, ensuring thorough testing and validation.}
-\bulletItem{Operate in an agile environment: address stories, tasks, tickets, sprints, issuing pull requests.}
-\bulletItem{Provide support and guidance to external consultants throughout project execution.}
-\bulletItem{Closely collaborate with digital design, architecture and test teams.}
-\bulletItem{Document firmware design documentation.}
-\bulletItem{Coding in C in automotive safety oriented projects.}
-\bulletItem{Write cmake scripts for C/C++ project system build.}
-\bulletItem{Use gcc and gdb for compilation and debugging.}
-\bulletItem{Use and update low level drivers LL and HAL: hardware abstraction layers.}
-\bulletItem{Bare metal coding.}
-\bulletItem{Debug and optimize software in a cross-team environment.}
-\bulletItem{Use git for versioning in a multiple nested repositories project environment.}
-\bulletItem{Address, review pull-requests on github.}
-\bulletItem{Develop in Windows, Linux, WSL, vscode windows to linux environments.}
-\bulletItem{Write python and bash scripts to automate tasks and improve efficiency.}
-\bulletItem{Make unit and integration tests.}
-\bulletItem{Use Jenkins automated tasks, collaborate with the dev-ops to put in place new jobs.}
-\bulletItem{Implemented mechanism allowing the user to extract reports on demand involving the ROS tool.}
-\bulletItem{Developed firmware for power consumption profiling.}
+\bulletItem{Developing firmware for ARM Cortex-M targets and FPGA SoC prototypes.}
+\bulletItem{Operating in an agile environment, managing milestones, stories, tasks, tickets, sprints, and pull requests.}
+\bulletItem{Providing support and guidance to external consultants throughout project execution.}
+\bulletItem{Collaborating with digital design, architecture, algorithm, and test teams ensuring alignment, quality, and compliance.}
+\bulletItem{Documenting firmware design specifications and requirements.}
+\bulletItem{Coding in C for automotive safety-oriented projects.}
+\bulletItem{Writing CMake scripts for C/C++ project build systems.}
+\bulletItem{Using GCC and GDB for compilation and debugging.}
+\bulletItem{Using and updating \bref{https://dev.st.com/stm32cube-docs/stm32u5-hal2/2.0.0-beta.1.1/docs/drivers/stm32u5xx_drivers_documentation.html}{LL\footnote{LL : Low Level} and HAL\footnote{HAL : Hardware Abstraction Layer}} libraries from ST for peripheral drivers.}
+\bulletItem{Bare-metal coding.}
+\bulletItem{Debugging and optimizing software in a cross-team environment.}
+\bulletItem{Using Git for versioning control in a project environment with multiple nested repositories.}
+\bulletItem{Addressing and reviewing pull-requests on GitHub.}
+\bulletItem{Developing in Windows, Linux, WSL, Windows-SSH-Linux environments.}
+\bulletItem{Writing Python and Bash scripts to automate tasks and improve efficiency.}
+\bulletItem{Creating unit tests using the \bref{https://cmocka.org/}{CMocka} framework to ensure code reliability.}
+\bulletItem{Writing integration tests with \bref{https://gauge.org/}{Gauge} and Python to ensure compliance, non-regression, and system stability.}
+\bulletItem{Using Jenkins automated tasks and tools, collaborating with the dev-ops for new automation.}
+\bulletItem{Leveraging \bref{https://www.ros.org/}{ROS\footnote{ROS : Robot Operating System}} for effective interpretation and processing of collected data.}
+\bulletItem{Maintaining HTOL\footnote{HTOL : High-Temperature Operating Life} firmware to support Quality Assurance testing purposes.}
+\bulletItem{Executing morning routines to analyze and report results from nightly non-regression tests, ensuring software stability.}
+\bulletItem{Achievements:}
+\begin{itemize}
+    \item Led verification activities resulting in a successful, on-time "Go" status for silicon pattern generation.
+    \item Implemented a software module to extract debug reports, parameters, PHY indicators, and CIR\footnote{CIR : Channel Impulse Response} data.
+    \item Enabled debug reports and CIR\footnotemark[5] data visualization via \bref{https://plotjuggler.io/}{PlotJuggler} tool.
+    \item The pipeline---debug module $\rightarrow$ ROS\footnotemark[3] $\rightarrow$ visualization---is extensively used for demo purposes and system analysis.
+    \item Managed firmware version control to ensure traceability between ARM and RISC-V firmware binaries.
+    \item Ensure the PIB\footnote{PIB : Parameter Information Base} is correctly initialized and consistently populated.
+    \item Designed and developed firmware to profile SoC power consumption.
+\end{itemize}
 \outerBulletListEnd
 \vspace{1em} % Add space here
+
+\companyNameAndLocationHeading {\bref{https://www.st.com/}{STMicroelectronics}}{Le Bourget-du-lac, Auvergne-Rhône-Alpes, France}
+\titleAndDateHeading
+{Verification lead pre-pg}{March 2024 \textbf{--} December 2024}
+\outerBulletListStart
+\bulletItem{Leading actions \& responsibilities:}
+\innerBulletListStart
+\bulletItem{Defined \& regrouped actions in milestones for better visibility and progress tracking.}
+\bulletItem{Organized milestones in sprints, with clear objectives, including demo requirements.}
+\bulletItem{Assigned stories \& tasks to team members and myself within each sprint.}
+\bulletItem{Conducted regular reviews \& status meetings to review progress and apply corrections.}
+\bulletItem{Presented sprint demos to showcase progress and meet project targets.}
+\innerBulletListEnd
+\bulletItem{Hands on contributions:}
+\innerBulletListStart
+\bulletItem{Contributed to features implementation, enhanced project functionalities.}
+\bulletItem{Implemented tests to ensure features reliability and performance.}
+\bulletItem{Code reviews.}
+\bulletItem{Bug fixing and troubleshooting.}
+\innerBulletListEnd
+\outerBulletListEnd
+
 \companyNameAndLocationHeading
 {\bref{https://atos.net/}{Atos}}{Grenoble, Auvergne-Rhône-Alpes, France}
 \titleAndDateHeading
-{Test engineer: cmos image sensors}{October 2020\textbf{--} February 2022}
+{Test engineer: CMOS Image Sensors}{October 2020\textbf{--} February 2022}
 \outerBulletListStart
-\bulletItem{Developed Python testing scripts ensuring that the following safety mechanisms met safety requirements for the automotive industry:}
+\bulletItem{Developed Python testing scripts to verify that key safety mechanisms comply with automotive industry safety requirements, including:}
 \innerBulletListStart
-\bulletItem{mcu watchdog, stack monitoring, lockstep}
-\bulletItem{firmware global variables protection,}
-\bulletItem{at startup built in self tests bist}
-\bulletItem{memory integrity, parity, bist,}
-\bulletItem{crc program protection,}
-\bulletItem{clock bist,}
-\bulletItem{pll unlock detection,}
-\bulletItem{asil diagnostic rows and columns,}
-\bulletItem{otp memory crc,}
-\bulletItem{supply monitoring blocks,}
-\bulletItem{periodic voltage monitoring,}
-\bulletItem{thermal monitoring,}
-\bulletItem{periodic crack detection.}
+\bulletItem{MCU\footnote{MCU: Microcontroller Unit} watchdog, stack monitoring, lockstep}
+\bulletItem{Firmware global variables protection,}
+\bulletItem{Built-in self-tests (BIST)\footnote{BIST : Built-In Self Test}  at startup,}
+\bulletItem{Memory integrity, parity, BIST\footnotemark[8],}
+\bulletItem{CRC program protection,}
+\bulletItem{Clock BIST\footnotemark[8],}
+\bulletItem{PLL unlock detection,}
+\bulletItem{ASIL\footnote{ASIL : Automotive Safety Integrity Level.} diagnostic rows and columns,}
+\bulletItem{OTP\footnote{OTP : One-Time Programmable.} memory CRC,}
+\bulletItem{Supply monitoring blocks,}
+\bulletItem{Periodic voltage monitoring,}
+\bulletItem{Thermal monitoring,}
+\bulletItem{Periodic crack detection.}
 \innerBulletListEnd
 
 \bulletItem{Documented tests specifications and reported on test results.}
-\bulletItem{Used git for code versioning, Jenkins for automation and integration}
-\bulletItem{Wroked in agile environment.}
+\bulletItem{Used Git for version control and Jenkins for automation and continuous integration.}
+\bulletItem{Worked in an agile environment.}
 \outerBulletListEnd
-
-\newpage
+\vspace{1em}
 
 \companyNameAndLocationHeading
 {\bref{https://www.st.com/}{STMicroelectronics}}{Grenoble, Auvergne-Rhône-Alpes, France}
@@ -277,8 +311,27 @@ quality work and team cohesion.}
 \bulletItem{Advanced Integrated Components}
 \bulletItem{Energy production and management for systems}
 \outerBulletListEnd
-
 \vspace{1em} % Add space here
+
+\companyNameAndLocationHeading
+{\bref{https://sup-fc.univ-fcomte.fr/informatique}{University of Franche-Comté}}{Bourgogne-Franche-Comté, France}
+\titleAndDateHeading
+{Bachelor in \enquote{Computer Science}}{September 2020 \textbf{--} August 2021}
+\outerBulletListStart
+\bulletItem{Data base}
+\bulletItem{Algorithms and Basics of Programming}
+\bulletItem{English}
+\bulletItem{Analysis and modeling of information systems}
+\bulletItem{Formal methods}
+\bulletItem{Computer architecture}
+\bulletItem{Systems and Networks}
+\bulletItem{Language theory}
+\bulletItem{Program specification and proof}
+\bulletItem{Web languages}
+\bulletItem{Advanced programming}
+\outerBulletListEnd
+\vspace{1em}
+
 \companyNameAndLocationHeading
 {\bref{https://www.univ-tlse3.fr/decouvrir-nos-diplomes/licence-parcours-eea-fondamental-eea-f}{Toulouse 3 University \enquote{Paul Sabatier}}}{Toulouse, Occitanie, France}
 \titleAndDateHeading
@@ -318,19 +371,48 @@ quality work and team cohesion.}
 \bulletItem{English}
 \bulletItem{General Culture and Expression}
 \outerBulletListEnd
+\vspace{1em} % Add space here
+
+\companyNameAndLocationHeading
+{\bref{https://www.armyacademy.ro/engleza/fmm.php}{\enquote{Nicolae Balcescu} Land Forces Academy }}{Sibiu, Romania }
+\titleAndDateHeading
+{\bref{https://github.com/slalomeset/diplomas/blob/main/military_academy.pdf}{ Bachelor's Degree in Management of Military Organizations }}{September 2002 \textbf{--} August 2006}
+\outerBulletListStart
+\bulletItem{Faculty of Military Management has the mission to form, at undergraduate and postgraduate level, officers for arms/military specialties of the Land Forces and also military and civilian specialists for other beneficiaries from the national defence system, public order and national security. The mission is in total accordance with the Institutional Strategy of “Nicolae Balcescu” Land Forces Academy and aims at creating general and specific professional competencies for the arms/military specialties: Artillery, Engineering, Defense CBRN, Transportation, Intendance, Finances and Accounting, Communications and Informatics.}
+\outerBulletListEnd
+
 \sectionListEnd
 \vspace{1em} % Add space here
 
+
 \section{Languages}
 \sectionListStart
-\bulletItem{\textbf{English:}{ Professional}}
+\bulletItem{\textbf{English:}{ Professional} \bref{https://github.com/slalomeset/certificates/blob/main/toeic_english.pdf}{[TOEIC certificate]} }
 \bulletItem{\textbf{French:}{ Native}}
 \bulletItem{\textbf{Romanian:}{ Native}}
 \sectionListEnd
 \vspace{1em} % Add space here
 
-%----------- SKILLS -----------
+%----------- Professional Training -----------
+\section{Professional Trainings}
+\sectionListStart
+\bulletItem{\empty}
+\outerBulletListStart
+\bulletItem{Writing secure firmware}
+\bulletItem{ISO26262 in Product Development}
+\bulletItem{Automotive Safety HW ISO26262}
+\bulletItem{Object Oriented Programming in C++}
+\bulletItem{General Imaging Concepts \& Integration}
+\bulletItem{Understanding Image Sensor Characterization}
+\bulletItem{Indirect Time Of Flight}
+\bulletItem{Image Sensors Architecture}
+\bulletItem{Algorithms for Image Analysis}
+\bulletItem{Imaging Signal Processing Algorithms}
+\outerBulletListEnd
+\sectionListEnd
+\vspace{1em} % Add space here
 
+%----------- SKILLS -----------
 \section{Skills \& Interests}
 \sectionListStart
 \bulletItem{\textbf{Languages:}{ C, python, bash, MATLAB}}
@@ -339,7 +421,8 @@ quality work and team cohesion.}
 \vspace{\vspaceAfterBullets}
 \bulletItem{\textbf{Protocols:}{ i2c, spi, uart, jtag, swd, can}}
 \vspace{\vspaceAfterBullets}
-\bulletItem{\textbf{Continued Education:}}
+
+\bulletItem{\textbf{Continued Education:} \bref{https://github.com/slalomeset/certificates/blob/main/UdemyCoursesCertification.pdf}{click\&check certificates} }
 \outerBulletListStart
 \bulletItem{\bref{https://www.udemy.com/course/mastering-rtos-hands-on-with-freertos-arduino-and-stm32fx/}{Mastering RTOS: Hands on FreeRTOS and STM32Fx with Debugging}}
 \bulletItem{\bref{https://www.udemy.com/course/bash-mastery/?kw=Bash+Mastery\%3A+The+Complete+Guide+to+Bash+Shell+Scriptin&src=sac}{Bash Mastery: The Complete Guide to Bash Shell Scripting}}
@@ -351,8 +434,6 @@ quality work and team cohesion.}
 \bulletItem{\bref{https://www.udemy.com/course/mastering-microcontroller-with-peripheral-driver-development/?kw=Mastering+Microcontroller+and+Embedded+Driver+Development&src=sac}{Mastering Microcontroller and Embedded Driver Development}}
 \bulletItem{\bref{https://www.udemy.com/course/stm32f4-arm-cortex-mx-custom-bootloader-development/?couponCode=25BBPMXINACTIVE}{STM32Fx Microcontroller Custom Bootloader Development}}
 \bulletItem{\bref{https://www.udemy.com/course/microcontroller-embedded-c-programming/?kw=Microcontroller+Embedded+C+Programming\%3A+absolute+beginners&src=sac}{Microcontroller Embedded C Programming: Absolute Beginners}}
-
-
 \outerBulletListEnd
 \vspace{\vspaceAfterBullets}
 \bulletItem{\textbf{Interests:}{ family activities \& education, music, cross-training}}
