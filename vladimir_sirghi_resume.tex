@@ -32,7 +32,9 @@
 \usepackage{graphicx}
 \usepackage{etoolbox}  % for conditional logic
 \usepackage{csquotes}
+\usepackage{footmisc}
 
+\renewcommand{\footnotesize}{\scriptsize} % réduit la taille des footnotes
 
 % is_long_version = true will render more detailed resume
 \newtoggle{is_long_version} % Define the boolean variable
@@ -167,40 +169,38 @@
 
 \companyNameAndLocationHeading {\bref{https://www.st.com/}{STMicroelectronics}}{Le Bourget-du-lac, Auvergne-Rhône-Alpes, France}
 \titleAndDateHeading
-{Embedded software engineer}{March 2022 \textbf{--} Present}
+{Embedded Software Engineer -- Ultra-Wideband (UWB) Technology}{March 2022 \textbf{--} Present}
 \outerBulletListStart
-\bulletItem{Developing firmwares for ARM Cortex-M targets and FPGAs SOC prototypes.}
-\bulletItem{Operating in agile environment: addressing stories, tasks, tickets, sprints, issuing pull requests.}
+\bulletItem{Developing firmware for ARM Cortex-M targets and FPGA SoC prototypes.}
+\bulletItem{Operating in an agile environment, managing milestones, stories, tasks, tickets, sprints, and pull requests.}
 \bulletItem{Providing support and guidance to external consultants throughout project execution.}
-\bulletItem{Collaborating with digital design, architecture, algorithm and test teams.}
-\bulletItem{Documenting firmware design specification and requirements.}
-\bulletItem{Coding in C in automotive safety-oriented projects.}
-\bulletItem{Writing cmake scripts for C/C++ project system build.}
-\bulletItem{Using gcc and gdb for compilation and debugging.}
-\bulletItem{Using and updating \bref{https://dev.st.com/stm32cube-docs/stm32u5-hal2/2.0.0-beta.1.1/docs/drivers/stm32u5xx_drivers_documentation.html}{\textit{LL}\footnote{LL : Low Level} and \textit{HAL}\footnote{HAL : Hardware Abstraction Layer}} libraries from ST for peripheral drivers.}
-\bulletItem{Bare metal coding.}
+\bulletItem{Collaborating with digital design, architecture, algorithm, and test teams ensuring alignment, quality, and compliance.}
+\bulletItem{Documenting firmware design specifications and requirements.}
+\bulletItem{Coding in C for automotive safety-oriented projects.}
+\bulletItem{Writing CMake scripts for C/C++ project build systems.}
+\bulletItem{Using GCC and GDB for compilation and debugging.}
+\bulletItem{Using and updating \bref{https://dev.st.com/stm32cube-docs/stm32u5-hal2/2.0.0-beta.1.1/docs/drivers/stm32u5xx_drivers_documentation.html}{LL\footnote{LL : Low Level} and HAL\footnote{HAL : Hardware Abstraction Layer}} libraries from ST for peripheral drivers.}
+\bulletItem{Bare-metal coding.}
 \bulletItem{Debugging and optimizing software in a cross-team environment.}
-\bulletItem{Using git for versioning in a multiple nested repositories project environment.}
-\bulletItem{Addressing and reviewing pull-requests on github.}
-\bulletItem{Developping in Windows, Linux, WSL, windows to linux in ssh environments.}
-\bulletItem{Writing python and bash scripts to automate tasks and improve efficiency.}
-\bulletItem{Writing unit tests (\bref{https://cmocka.org/}{cmocka} framework)}
-\bulletItem{Writing integration tests (\bref{https://gauge.org/}{gauge} framework and Python scripting).}
+\bulletItem{Using Git for versioning control in a project environment with multiple nested repositories.}
+\bulletItem{Addressing and reviewing pull-requests on GitHub.}
+\bulletItem{Developing in Windows, Linux, WSL, Windows-SSH-Linux environments.}
+\bulletItem{Writing Python and Bash scripts to automate tasks and improve efficiency.}
+\bulletItem{Creating unit tests using the \bref{https://cmocka.org/}{CMocka} framework to ensure code reliability.}
+\bulletItem{Writing integration tests with \bref{https://gauge.org/}{Gauge} and Python to ensure compliance, non-regression, and system stability.}
 \bulletItem{Using Jenkins automated tasks and tools, collaborating with the dev-ops for new automation.}
-\bulletItem{Implementing a software module to extract debug reports, parameters, phy indicators and channel impulse responses.}
-\bulletItem{Employing \bref{https://www.ros.org/}{\textit{ROS}\footnote{ROS : Robot Operating System}} to effectively interpret the collected data.}
-\bulletItem{Developing firmware for power consumption profiling.}
-\bulletItem{Maintaining \textit{HTOL}\footnote{HTOL : High-Temperature Operating Life} firmware for QA purposes.}
-
-\outerBulletListEnd
-
-\outerBulletListStart
+\bulletItem{Leveraging \bref{https://www.ros.org/}{ROS\footnote{ROS : Robot Operating System}} for effective interpretation and processing of collected data.}
+\bulletItem{Maintaining HTOL\footnote{HTOL : High-Temperature Operating Life} firmware to support Quality Assurance testing purposes.}
+\bulletItem{Executing morning routines to analyze and report results from nightly non-regression tests, ensuring software stability.}
 \bulletItem{Achievements:}
 \begin{itemize}
-    \item Leading on verification activities resulted in a successful, on-time "Go" status for silicon pattern generation.
-    \item The developed software debug module reduced debug time and increased overall troubleshooting capabilities.
-    \item Debug reports, along with channel impulse response data, are available in \bref{https://plotjuggler.io/}{PlotJuggler} visualization tool.
-    \item The pipe: debug module + \textit{ROS} + visualization is highly used in demo purposes along with system analysis.
+    \item Led verification activities resulting in a successful, on-time "Go" status for silicon pattern generation.
+    \item Implemented a software module to extract debug reports, parameters, PHY indicators, and CIR\footnote{CIR : Channel Impulse Response} data.
+    \item Enabled debug reports and CIR\footnotemark[5] data visualization via \bref{https://plotjuggler.io/}{PlotJuggler} tool.
+    \item The pipeline---debug module $\rightarrow$ ROS\footnotemark[3] $\rightarrow$ visualization---is extensively used for demo purposes and system analysis.
+    \item Managed firmware version control to ensure traceability between ARM and RISC-V firmware binaries.
+    \item Ensure the PIB\footnote{PIB : Parameter Information Base} is correctly initialized and consistently populated.
+    \item Designed and developed firmware to profile SoC power consumption.
 \end{itemize}
 \outerBulletListEnd
 \vspace{1em} % Add space here
@@ -229,28 +229,28 @@
 \companyNameAndLocationHeading
 {\bref{https://atos.net/}{Atos}}{Grenoble, Auvergne-Rhône-Alpes, France}
 \titleAndDateHeading
-{Test engineer: cmos image sensors}{October 2020\textbf{--} February 2022}
+{Test engineer: CMOS Image Sensors}{October 2020\textbf{--} February 2022}
 \outerBulletListStart
-\bulletItem{Developed Python testing scripts ensuring that the following safety mechanisms met safety requirements for the automotive industry:}
+\bulletItem{Developed Python testing scripts to verify that key safety mechanisms comply with automotive industry safety requirements, including:}
 \innerBulletListStart
-\bulletItem{mcu watchdog, stack monitoring, lockstep}
-\bulletItem{firmware global variables protection,}
-\bulletItem{at startup built in self tests bist}
-\bulletItem{memory integrity, parity, bist,}
-\bulletItem{crc program protection,}
-\bulletItem{clock bist,}
-\bulletItem{pll unlock detection,}
-\bulletItem{asil diagnostic rows and columns,}
-\bulletItem{otp memory crc,}
-\bulletItem{supply monitoring blocks,}
-\bulletItem{periodic voltage monitoring,}
-\bulletItem{thermal monitoring,}
-\bulletItem{periodic crack detection.}
+\bulletItem{MCU\footnote{MCU: Microcontroller Unit} watchdog, stack monitoring, lockstep}
+\bulletItem{Firmware global variables protection,}
+\bulletItem{Built-in self-tests (BIST)\footnote{BIST : Built-In Self Test}  at startup,}
+\bulletItem{Memory integrity, parity, BIST\footnotemark[8],}
+\bulletItem{CRC program protection,}
+\bulletItem{Clock BIST\footnotemark[8],}
+\bulletItem{PLL unlock detection,}
+\bulletItem{ASIL\footnote{ASIL : Automotive Safety Integrity Level.} diagnostic rows and columns,}
+\bulletItem{OTP\footnote{OTP : One-Time Programmable.} memory CRC,}
+\bulletItem{Supply monitoring blocks,}
+\bulletItem{Periodic voltage monitoring,}
+\bulletItem{Thermal monitoring,}
+\bulletItem{Periodic crack detection.}
 \innerBulletListEnd
 
 \bulletItem{Documented tests specifications and reported on test results.}
-\bulletItem{Used git for code versioning, Jenkins for automation and integration}
-\bulletItem{Worked in agile environment.}
+\bulletItem{Used Git for version control and Jenkins for automation and continuous integration.}
+\bulletItem{Worked in an agile environment.}
 \outerBulletListEnd
 \vspace{1em}
 
