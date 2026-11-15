@@ -42,6 +42,34 @@
                 "kind": "build",
                 "isDefault": false
             }
+        },
+        {
+            "label": "Build Short Resume",
+            "type": "shell",
+            "command": "sh",
+            "args": [
+                "-c",
+                "latexmk -pdf -jobname=vladimir_sirghi_resume_short vladimir_sirghi_resume.tex > /dev/null 2>&1"
+            ],
+            "problemMatcher": [
+                {
+                    "owner": "latex",
+                    "fileLocation": "relative",
+                    "pattern": [
+                        {
+                            "regexp": "^(.*):(\\d+):(\\d+): (.*)$",
+                            "file": 1,
+                            "line": 2,
+                            "column": 3,
+                            "message": 4
+                        }
+                    ]
+                }
+            ],
+            "group": "build",
+            "presentation": {
+                "close": true
+            }
         }
     ]
 }
