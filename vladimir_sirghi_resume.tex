@@ -38,7 +38,11 @@
 
 % is_long_version = true will render more detailed resume
 \newtoggle{is_long_version} % Define the boolean variable
-\settoggle{is_long_version}{true}
+\ifdefined\shortversion
+  \settoggle{is_long_version}{false}
+\else
+  \settoggle{is_long_version}{true}
+\fi
 
 \pagestyle{fancy}
 
@@ -159,7 +163,7 @@
 \iftoggle{is_long_version}
 {
   \section{Summary}
-  \small I am an Embedded Software Engineer with 8 years of experience in the semiconductor industry, specializing in low-level software for automotive SOC. My expertise lies in C and bare-metal programming.}{}
+  \small Senior Embedded Software Engineer with 8+ years in the semiconductor industry, specializing in bare-metal C and low-level firmware architecture. Utilizing AI-assisted development (GitHub Copilot) to streamline complex debugging, modernize codebases, and accelerate hardware bring-up.}{}
 \vspace{1em} % Add space here
 %----------- EXPERIENCE -----------
 
@@ -298,19 +302,9 @@
 \bulletItem{\textbf{Core:} Embedded C (Advanced), Bare-metal, ARM Cortex-M, ISO 26262 (Automotive Safety).}
 \bulletItem{\textbf{Scripting \& Quality:} Python, Bash, Jenkins CI/CD (User), CMocka, Gauge, Unit/Integration Testing.}
 \bulletItem{\textbf{Tools \& Protocols:} Git, CMake, OpenOCD, ROS, GDB, I2C, SPI, UART, CAN, SWD.}
+\bulletItem{\textbf{AI-Assisted Engineering:} GitHub Copilot, Prompt Engineering for Embedded Constraints, AI Code Auditing.}
 \sectionListEnd
 \vspace{1em} % Add space here
 
-%----------- PROJECTS -----------
-\section{Projects}
-\sectionListStart
-\bulletItem{\empty}
-\outerBulletListStart
-\bulletItem{Moving Cube Image}
-\bulletItem{Convolutional encoding machine \& viterbi decoder}
-\bulletItem{PID PWM motor control}
-\bulletItem{Maximum Power Point Tracking MPPT Solar Panel Controller}
-\outerBulletListEnd
-\sectionListEnd
 %-------------------------------------------
 \end{document}
