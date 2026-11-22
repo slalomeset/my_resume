@@ -1,7 +1,7 @@
-# Cover letter workflow
+# Job application workflow
 
-The `job_application_writer` agent generates a tailored, fact-grounded cover letter
-from a job offer and the short and detailed LaTeX resumes.
+The `job_application_writer` agent creates a fact-grounded, offer-specific resume,
+cover letter, or both from a job offer and the canonical resume sources.
 
 ## Create an application
 
@@ -13,8 +13,8 @@ from a job offer and the short and detailed LaTeX resumes.
 
 2. Paste the job offer and fill in the metadata fields.
 3. Select the `job_application_writer` agent in Copilot Chat.
-4. Ask: “Create a cover letter for this offer.”
-5. Review `evidence.md` before finalizing the letter.
+4. Ask for a tailored short resume, a cover letter, or both.
+5. Review `evidence.md` and the generated source files before using them.
 
 ## Output
 
@@ -24,16 +24,27 @@ Each application is kept in its own directory:
 cover_letter/applications/<company>-<role>/
   offer.txt
   evidence.md
-  letter.tex
-  letter.pdf
+  resume.tex       # created when requested
+  resume.pdf       # generated when resume.tex is created
+  letter.tex       # created when requested
+  letter.pdf       # generated when letter.tex is created
 ```
 
-The `letter.tex` file is the editable source. The PDF is a generated artifact.
+The application-specific `resume.tex` is derived from the short resume; the
+detailed resume may be used to verify supporting facts. Neither canonical resume
+source is changed. The `letter.tex` and `resume.tex` files are editable sources;
+their PDFs are generated artifacts. Only create the deliverables requested.
 
 ## Validation
 
-Run the following inside the application directory:
+Run the relevant command inside the application directory:
 
 ```bash
 latexmk -pdf letter.tex
+latexmk -pdf resume.tex
 ```
+
+When creating `resume.tex`, set the photo path to
+`../../../ressources/photo/cv_photo.jpg` when building from the application
+directory. Inspect the PDF for LaTeX warnings, page count, layout, and searchable
+text before sharing it.

@@ -1,11 +1,12 @@
 ---
 name: cover-letter
-description: Generate a fact-grounded LaTeX cover letter from a job offer and the primary resume.
+description: Generate a fact-grounded LaTeX cover letter and, when requested, a tailored resume for a job offer.
 ---
 
-# Cover Letter
+# Job Application
 
-Use this skill to create or revise a cover letter for a specific job offer.
+Use this skill to create or revise a cover letter, an offer-specific resume, or
+both for a specific job offer.
 
 ## Source of truth
 
@@ -27,19 +28,24 @@ Use this skill to create or revise a cover letter for a specific job offer.
 2. Read the resume and build an evidence table:
    - offer requirement;
    - matching resume evidence;
-   - source line or section;
+   - source file and section;
    - confidence level;
    - missing information.
-3. Generate an outline before prose:
+3. Confirm which deliverable(s) the user wants if unclear.
+4. For a letter, generate an outline before prose:
    - why this role;
    - why this company;
    - 2-3 strongest matching qualifications;
    - role-specific contribution;
    - concise closing.
-4. Draft `letter.tex` in the requested language and target the offer naturally.
-5. Mark facts that cannot be verified, but do not add them to the letter.
-6. Compile with `latexmk -pdf letter.tex`.
-7. Report source files used, output status, evidence gaps, and any required user decisions.
+5. For a tailored resume, use the short source as the starting point, consult the
+   detailed source only for verified supporting facts, and write the offer-specific
+   copy to `cover_letter/applications/<company>-<role>/resume.tex`. Never replace
+   either canonical resume source.
+6. Mark facts that cannot be verified; do not add them to a deliverable.
+7. Compile each requested LaTeX source in the application directory and inspect
+   warnings, page count, layout, and searchable text.
+8. Report source files used, output status, evidence gaps, and required user decisions.
 
 ## Factuality rules
 
@@ -50,7 +56,15 @@ Use this skill to create or revise a cover letter for a specific job offer.
 - Report missing company, recruiter, address, or application details as questions rather than guessing.
 - Use only the explicit language or market form when personal language preference is unknown.
 
-## Letter quality
+## Resume and letter quality
+
+- Tailor relevance, ordering, summary, skills, and bullet selection naturally.
+- Keep resume claims traceable to their source in `evidence.md`.
+- Do not add offer keywords, responsibilities, or claims without supporting evidence.
+- Preserve the candidate's personal-information consent choices.
+- When copying the resume source, set its photo path to
+  `../../../ressources/photo/cv_photo.jpg` for a build from the application
+  directory without changing the canonical source.
 
 - Keep the letter concise, typically one page.
 - Use 2-3 concrete evidence-based examples; avoid restating the entire resume.
@@ -64,7 +78,8 @@ Use this skill to create or revise a cover letter for a specific job offer.
 
 - Preserve valid escaping and LaTeX special characters.
 - Do not edit the generated PDF directly.
-- Use the existing `letter` document pattern unless a stronger template is requested.
+- For a cover letter, use the existing `letter` document pattern unless a
+  stronger template is requested.
 - Keep links accessible and avoid layout-heavy content.
 - Compile after every substantive LaTeX edit.
-- Use `latexmk -pdf letter.tex` in the application directory.
+- Use `latexmk -pdf letter.tex` and/or `latexmk -pdf resume.tex` in the application directory, as requested.

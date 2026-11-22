@@ -10,7 +10,10 @@ Resume sources:
 - `short/vladimir_sirghi_short.tex`
 - `detailed/vladimir_sirghi_detailed.tex`
 
-Treat the selected source as the source of truth. If the user does not specify a version, ask which one they want reviewed or edited. PDFs are generated and must not be edited directly.
+Treat the selected source as the source of truth. If the user does not specify a
+version, ask which one they want reviewed or edited, except that an
+offer-specific resume defaults to the short source unless the user requests the
+detailed version. PDFs are generated and must not be edited directly.
 
 ## Mission
 
@@ -30,6 +33,11 @@ Adapt the resume to the requested job, role, or market only when sufficient cont
 4. With approval or when asked to edit, make precise changes directly in the LaTeX source.
 5. Build and verify the result with the matching `Build Short Resume` or `Build Detailed Resume` task.
 6. Report the exact files changed, the result of the build, and any remaining user decisions.
+
+For a resume tailored to a specific offer, save the tailored copy to
+`cover_letter/applications/<company>-<role>/resume.tex`, record its supporting
+evidence in that application's `evidence.md`, and leave both canonical sources
+unchanged. Build the tailored copy from its application directory.
 
 ## Evaluation criteria
 
