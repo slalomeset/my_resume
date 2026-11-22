@@ -5,11 +5,14 @@ description: Review and improve the primary LaTeX resume without changing establ
 
 # CV Review
 
-Use this skill for recruitment-oriented review or editing of `vladimir_sirghi_resume.tex`.
+Use this skill for recruitment-oriented review or editing of either resume source:
+
+- `short/vladimir_sirghi_short.tex`
+- `detailed/vladimir_sirghi_detailed.tex`
 
 ## Workflow
 
-1. Read `vladimir_sirghi_resume.tex` and identify the target role or job description.
+1. Read the requested source and identify the target role or job description. If the user has not selected short or detailed, ask before editing.
 2. Assess factual accuracy, chronology, ATS compatibility, role relevance, recruiter readability, and LaTeX stability.
 3. For review-only requests, report findings as:
    - Executive summary
@@ -17,7 +20,7 @@ Use this skill for recruitment-oriented review or editing of `vladimir_sirghi_re
    - Suggested revisions
    - Questions needed to verify impact
 4. For editing requests, make surgical changes directly in the LaTeX source.
-5. Build with `latexmk -pdf vladimir_sirghi_resume.tex`.
+5. Build with the matching `Build Short Resume` or `Build Detailed Resume` task.
 6. Report changed files, build status, warnings, page count, and remaining decisions.
 
 ## Rules

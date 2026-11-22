@@ -1,7 +1,7 @@
 # Cover letter workflow
 
 The `job_application_writer` agent generates a tailored, fact-grounded cover letter
-from a job offer and the primary LaTeX resume.
+from a job offer and the short and detailed LaTeX resumes.
 
 ## Create an application
 

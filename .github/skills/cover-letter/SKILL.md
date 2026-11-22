@@ -9,11 +9,11 @@ Use this skill to create or revise a cover letter for a specific job offer.
 
 ## Source of truth
 
-- Read `vladimir_sirghi_resume.tex` for established experience, education, tools, industries, and chronology.
+- Read `short/vladimir_sirghi_short.tex` and `detailed/vladimir_sirghi_detailed.tex` for established experience, education, tools, industries, and chronology.
 - Read the supplied offer text from `offer.txt` or an explicitly selected text file.
 - Read `cover_letter/cover_letter_template.tex` for the reusable LaTeX structure.
 - Consult `/home/vlad/repos/week_status` only when the user explicitly asks or when the offer requires a current achievement that is not yet in the resume.
-- Use established evidence from `vladimir_sirghi_resume.tex` before using `week_status`.
+- Use established evidence from the resume sources before using `week_status`, and record which source supports each claim.
 
 ## Workflow
 

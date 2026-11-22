@@ -7,21 +7,43 @@
             "command": "sh",
             "args": [
                 "-c",
-                "find . -name \"vladimir_sirghi_resume*\" ! -name \"vladimir_sirghi_resume.tex\" -exec rm -f {} + > /dev/null 2>&1"
+                "latexmk -C -outdir=short short/vladimir_sirghi_short.tex && latexmk -C -outdir=detailed detailed/vladimir_sirghi_detailed.tex"
             ],
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+            "problemMatcher": []
         },
         {
-            "label": "Build LaTeX Project",
+            "label": "Build Detailed Resume",
             "type": "shell",
-            "command": "sh",
+            "command": "latexmk",
             "args": [
-                "-c",
-                "latexmk -pdf vladimir_sirghi_resume.tex > /dev/null 2>&1"
+                "-pdf",
+                "-outdir=detailed",
+                "detailed/vladimir_sirghi_detailed.tex"
+            ],
+            "problemMatcher": [
+                {
+                    "owner": "latex",
+                    "fileLocation": "relative",
+                    "pattern": [
+                        {
+                            "regexp": "^(.*):(\\d+):(\\d+): (.*)$",
+                            "file": 1,
+                            "line": 2,
+                            "column": 3,
+                            "message": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Build Short Resume",
+            "type": "shell",
+            "command": "latexmk",
+            "args": [
+                "-pdf",
+                "-outdir=short",
+                "short/vladimir_sirghi_short.tex"
             ],
             "problemMatcher": [
                 {
@@ -41,35 +63,23 @@
             "group": {
                 "kind": "build",
                 "isDefault": false
-            }
-        },
-        {
-            "label": "Build Short Resume",
-            "type": "shell",
-            "command": "sh",
-            "args": [
-                "-c",
-                "latexmk -pdf -jobname=vladimir_sirghi_resume_short vladimir_sirghi_resume.tex > /dev/null 2>&1"
-            ],
-            "problemMatcher": [
-                {
-                    "owner": "latex",
-                    "fileLocation": "relative",
-                    "pattern": [
-                        {
-                            "regexp": "^(.*):(\\d+):(\\d+): (.*)$",
-                            "file": 1,
-                            "line": 2,
-                            "column": 3,
-                            "message": 4
-                        }
-                    ]
-                }
-            ],
-            "group": "build",
+            },
             "presentation": {
                 "close": true
             }
+        },
+        {
+            "label": "Build Both Resumes",
+            "dependsOn": [
+                "Build Short Resume",
+                "Build Detailed Resume"
+            ],
+            "dependsOrder": "parallel",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
         }
     ]
 }
