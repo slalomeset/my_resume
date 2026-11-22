@@ -41,6 +41,10 @@ Adapt the resume to the requested job, role, or market only when sufficient cont
 - Check for grammar and spelling in the language requested by the user.
 - Do not expose sensitive personal information; preserve the user's consent choices about location, phone, photo, and links.
 
+## Resources
+
+- Check path `/home/vlad/repos/week_status` for content that is relevant to the resume. Do not assume that all content is relevant; only include what is requested or clearly supports the target role.
+
 ## Editing rules
 
 - Make surgical edits rather than rewriting unrelated sections.
